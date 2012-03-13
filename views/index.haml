@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Ruby Holidays Gem
+  %body
+  
+    %h1= "What Holidays Are Happening #{@when}?"
+    
+    - if @holidays.length > 0
+      %ul
+        - @holidays.each do |h|
+          %li
+            = h[:name]
+            in
+            = h[:regions]
+    - else
+      %strong None (that we know of).  How sad.
+
+    %form{:method => 'get'}
+      %label Try another date? Type it and hit Enter.
+      %br
+      %input{:type => 'date'}
+      
+  %p
+    %small
+      What is this?  A super slim interface on the 
+      %a{:href => 'https://github.com/alexdunae/holidays'} Ruby Holidays gem.
+      Can you make it prettier?
+      %a{:href => 'https://github.com/alexdunae/holidays-www'} Grab the code and make it better.
